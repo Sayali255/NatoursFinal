@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+.header{
+    height:95vh;
+    // background-image: linear-gradient(95deg $color-primary-light,$color-primary-dark);
+    background-image: linear-gradient(to right bottom, $color-gradient-1,$color-gradient-2),
+    url('../images/hero.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 0,100% 0,100% 75%, 0 100%);
+    // clip-path: polygon(0 0,100% 50%,0 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+
+    .logo-container{
+        position: absolute;
+        top:2.5rem;
+        left:2.5rem;
+        .logo{
+            display: inline-block;
+            width:100px;
+            img{
+                width:100%;
+            }
+        }
+    }
+
+    &-caption{
+        font-family: "Poppins", sans-serif;
+        text-align:center;
+        color:$color-white;
+        text-transform: uppercase;
+        // animation: moveInRight1 4s ease-in-out infinite;
+
+        // h1{
+        //     margin-bottom:3.75rem;
+        // }
+        // &:hover,&:focus{
+        //     transform: scale(1.1);
+        //     // text-shadow: 5px 10px 20px rgba($color-dark, .2);
+        //     text-shadow: 5px 10px 20px rgba($color-primary-light , .2);
+        // }
+        & .for-animation{
+            margin-bottom: 4rem;
+
+            & :nth-of-type(1){
+                color: transparent;
+                -webkit-text-stroke: 3px #ffffff;
+            }
+            & :nth-of-type(2){
+                color: #05457d95;
+                animation: moveInRight 3s ease-in-out infinite;
+            
+            }
+        }
+        &-main{
+            display: block;
+            // font-size: 3.75rem;
+            font-weight: 600;
+            letter-spacing: 2.5rem;
+            // animation: moveInRight1 4s ease-in-out infinite;
+            // animation: moveInRight 1s ease-in-out both;
+            position: absolute;
+            left:50%;
+            top:26%;
+            // width: 100%;
+            transform:translate(-50%,-50%);
+            font-size:8rem;
+        }
+        &-sub{
+            display: block;
+            font-size:2.5rem;
+            font-weight:400;
+            letter-spacing: 1.5rem;
+            // animation: moveInLeft 1s ease-in-out infinite;
+            position:absolute;
+            left:50%;
+            top:40%;
+            transform:translate(-50%,-50%);
+        }
+    }
+}
+
+// .for-animation{
+//    margin-bottom: 4rem;
+// }
+// .for-animation{
+//     animation: moveInRight1 4s ease-in-out infinite;
+// }
+// .header-caption-main{
+//     position: absolute;
+//     left:50%;
+//     top:26%;
+//     // width: 100%;
+//     transform:translate(-50%,-50%);
+//     font-size:7rem;
+
+    
+// }
+// .header-caption-sub{
+//     position:absolute;
+//     left:50%;
+//     top:40%;
+//     transform:translate(-50%,-50%);
+//     // width: 100%;
+//     // animation: moveInRight1 4s ease-in-out infinite;
+
+// // }
+// .for-animation :nth-of-type(1){
+// 	color: transparent;
+// 	-webkit-text-stroke: 3px #ffffff;
+// }
+
+// .for-animation :nth-of-type(2){
+// 	color: #05457d95;
+// 	animation: moveInRight 3s ease-in-out infinite;
+
+// }

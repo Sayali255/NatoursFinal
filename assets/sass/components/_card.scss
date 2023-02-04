@@ -1,0 +1,118 @@
+.card {
+    height: 53rem;
+    position: relative;
+
+    &-side {
+        background-color: orange;
+        height: 53rem;
+        transition: all 1s ease-in-out;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-dark-shadow, 0.15);
+
+        &-front {
+            background-color: $color-white;
+        }
+
+        &-back {
+            background-color: blueviolet;
+            transform: perspective(150rem) rotateY(180deg);
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2{
+                background-image: linear-gradient(to right bottom,  $color-primary-img-light, $color-primary-img-dark);
+            }
+            &-3{
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+        }
+    }
+    &:hover &-side-front{
+        transform: perspective(150rem) rotateY(-180deg);
+    }
+    &:hover &-side-back{
+        transform: perspective(150rem) rotateY(0deg);
+    }
+    &-img{
+        height: 23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        background-size: cover;
+        &-1{
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../images/nat-5.jpg);
+        }
+        &-2{
+            background-image: linear-gradient(to right bottom, $color-primary-img-light, $color-primary-img-dark), url(../images/nat-6.jpg);
+        }
+        &-3{
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../images/nat-7.jpg);
+        }
+    }
+    &-heading{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 13rem;
+        right: 2rem;
+        width: 70%;
+        &-span{
+            padding: 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2{
+                background-image: linear-gradient(to right bottom, $color-primary-img-light, $color-primary-img-dark);
+            }
+            &-3{
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+        }
+    }
+    &-details{
+        padding: 3rem;
+        ul{
+            list-style: none;
+            width: 70%;
+            margin: 0 auto;
+            li{
+                padding: 1rem;
+                &:not(:last-child){
+                    border-bottom: 0.1rem solid $color-grey-light-2;
+                }
+            }
+        }
+    }
+
+    &-cta{
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        @include toCenter;
+        width: 90%;
+        text-align: center;
+    }
+    &-prize{
+        color: $color-white;
+        margin-bottom: 8rem;
+        &-only{
+            text-transform: uppercase;
+        }
+        &-value{
+            font-size: 6rem;
+            font-weight: 100;
+        }
+    }
+}

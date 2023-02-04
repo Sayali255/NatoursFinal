@@ -1,0 +1,59 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); 
+*,
+*::after,
+*::before{
+    box-sizing: border-box;  
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    padding: 2rem;
+    line-height: 1.5;
+}
+a:link, a:visited{
+    text-decoration: none;
+}
+
+
+///////////////////////////////////////////////////////////////
+
+
+html{
+    font-size: 62.5%; // 1rem = 10px // 16 >> 10 : 100 >> ??(62.5)
+
+    // @include response-phone{
+    //     font-size: 50%;
+    // }
+    
+    @include response(bigScreen){
+        font-size: 75%;  // 1rem = 12px  ===> 1200/16 == 75%
+    }
+
+    @include response(tabLand){
+        font-size: 56.25%;  // 1rem = 9px  ===> (9/16)*100 == 56.25%
+    }
+    
+    @include response(tabPort){
+        font-size: 50%;  // 1rem = 8px  ===> 800/16 == 50%
+    }
+    
+    
+    @include response(phone){
+        font-size: 50%;  // 1rem = 8px  ===> 800/16 == 50%
+    }
+}
+
+body{
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: $color-grey-dark;
+    line-height: 1.7;
+    padding: 3rem;
+    @include response(tabPort){
+        padding: 0;
+    }
+}
+
+/// ///////////////////////////////////////////////////////////////////////

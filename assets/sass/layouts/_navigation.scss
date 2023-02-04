@@ -1,0 +1,117 @@
+.navigation{
+    &-toggle{
+        background-color: $color-white;
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+        z-index: 100;
+        box-shadow: 0 1rem 3rem rgba($color-dark, 0.1);
+        cursor: pointer;
+        text-align: center;
+    }
+    &-icon{
+        width: 3rem;
+        height: 0.2rem;
+        background-color: $color-grey-dark1;
+        display: inline-block;
+        margin-top: calc(3.5rem - 0.1rem);
+        position: relative;
+        &::after, &::before{
+            content: '';
+            width: 3rem;
+            height: 0.2rem;
+            position: absolute;
+            background-color: $color-grey-dark1;
+            transition: all 0.3s ease-in-out;
+        }
+        &::after{
+            top: 0.8rem;
+            left: 0;
+        }
+        &::before{
+            top: -0.8rem;
+            left: 0;
+        }
+    }
+    &-background{
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        background-image: linear-gradient($color-primary-dark, $color-primary-light);
+        position: fixed;
+        top: 4.5rem;
+        right: 4.5rem;
+        z-index: 50;
+        transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    &-nav{
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 0;
+        height: 100vh;
+        text-align: center;
+        z-index: 80;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(.68, -0.55, 0.25, 1.5);
+    }
+    &-list{
+        list-style: none;
+    }
+    &-item{
+        margin: 1rem;
+    }
+    &-link{
+        &:link, &:visited{
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 3rem;
+            font-weight: 300;
+            border-radius: 0.5rem;
+            color: $color-white;
+            padding: 1rem 2rem;
+            background-image: linear-gradient(121deg, transparent 50%, white 50%);
+            background-size: 250%;
+            transition: all .5s ease-in-out;
+            @include response(phone){
+                font-size: 2rem;
+            }
+        }
+        &:hover,&:focus{
+            background-position: 100%;
+            color: $color-primary;
+            font-weight: 700;
+        }
+    }
+
+    &.active{
+        .navigation-background{
+            transform: scale(60);
+        }
+        .navigation-nav{
+            left: 0;
+            width: 100vw;
+            opacity: 1;
+        }
+        .navigation-icon{
+            background-color: transparent;
+            &::after{
+                top: 0;
+                transform: rotate(135deg);
+            }
+            &::before{
+                top: 0;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+}
